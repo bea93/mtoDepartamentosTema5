@@ -176,7 +176,7 @@ if ($entradaOK == true && isset($_REQUEST['Modificar'])) {
                                                echo $descDepartamento;
                                            }
                                            ?>">
-                                    <?php echo($aErrores['descripcion']!=null ? "<span style='color:red'>".$aErrores['descripcion']."</span>" : null); ?>
+                                    <?php echo($aErrores['DescDepartamento']!=null ? "<span style='color:red'>".$aErrores['DescDepartamento']."</span>" : null); ?>
                                     <br><br>
 
                                     <label for="volumen">Volumen de negocio:</label>
@@ -186,13 +186,13 @@ if ($entradaOK == true && isset($_REQUEST['Modificar'])) {
                                                if ($aErrores['VolumenNegocio'] != null) {
                                                    echo $volumenNegocio;
                                                } else {
-                                                   echo $_REQUEST['DescDepartamento'];
+                                                   echo $_REQUEST['VolumenNegocio'];
                                                }
                                            } else {
                                                echo $volumenNegocio;
                                            }
                                            ?>"><br><br>
-                                    <?php echo($aErrores['volumen']!=null ? "<span style='color:red'>".$aErrores['volumen']."</span>" : null); ?>
+                                    <?php echo($aErrores['VolumenNegocio']!=null ? "<span style='color:red'>".$aErrores['VolumenNegocio']."</span>" : null); ?>
 
                                     <input type="submit" value="Modificar" name="Modificar">
                                     <input type="submit" value="Cancelar" name="Cancelar">

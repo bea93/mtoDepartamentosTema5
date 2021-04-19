@@ -1,3 +1,15 @@
+<?php
+/*
+  @author: Bea Merino
+  @since: 07/04/2021
+  @description: Editar Departamento
+ */
+
+session_start(); // inicia una sesion, o recupera una existente
+if(!isset($_SESSION['usuarioDAW213MtoDepartamentosTema5'])){ // si no se ha logueado le usuario
+    header('Location: login.php'); // redireige a la pagina del login
+    exit;
+}?>
 <!DOCTYPE html>
 <!--[if gt IE 8]><!-->
 <html class="no-js">
@@ -59,7 +71,7 @@
                     try {
                         $miBD = new PDO(HOST, USER, PASS);
                         $miBD->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                        $sqlDepartamento = 'DELETE FROM Departamento WHERE CodDepartamento=:codigo'; //Creamos la sentencia sql    
+                        $sqlDepartamento = 'DELETE FROM T02_Departamento WHERE T02_CodDepartamento=:CodDepartamento'; //Creamos la sentencia sql    
                         $consulta = $miBD->prepare($sqlDepartamento); //preparamos el query
                         $consulta->bindValue(":codigo", $_REQUEST['codigo']); //A?adimos los parametros que necesitamos
                         $consulta->execute(); //Ejecutamos la consulta
